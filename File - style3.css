@@ -1,0 +1,308 @@
+/* === FIXED & CLEANED CSS === */
+
+/* Global Reset - FIXED: Remove display: grid */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Navbar - FIXED: Single rule */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; /* Combined padding */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.5;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+}
+
+/* Body */
+body {
+    background-color: #0f0f0f;
+    color: white;
+    padding-top: 80px; /* Navbar clearance */
+    min-height: 100vh;
+}
+
+/* Main Wrapper - Centers everything */
+.main-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* === PROFILE SECTION === */
+.profile-layout { 
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 250px + 650px = 900px */
+    gap: 20px;
+    height: 315px; /* FIXED height */
+}
+
+/* === BENTO SECTION === */
+.bento-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Match profile gap */
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 450px + 450px = 900px */
+    gap: 20px; /* FIXED: Match profile gap */
+    height: 310px; /* SAME as profile */
+}
+
+/* === UNIFIED CARD SYSTEM === */
+.card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 30px;
+    height: 100%; /* Fill parent height */
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease;
+}
+
+.card:hover {
+    background: #1c1c1c;
+}
+
+/* Picture Box */
+.picture-box {
+    height: 100%; /* Fill grid cell */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;         /* Explicitly remove any internal padding */
+    margin: 0;          /* Explicitly remove any external margin */
+    
+}
+
+.picture-box img {
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 30px;
+}
+
+/* Summary Section */
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.summary-title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.sparkle {
+    font-size: 32px;
+    color: #e3e3e3;
+}
+
+.text-box {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.inner-decoration {
+    position: absolute;
+    top: 12px;
+    left: 25px;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+     margin-bottom: 0px;
+}
+
+/* Typography for bento cards */
+.label {
+    color: #666;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.date {
+    color: #444;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.entry h4 {
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
+.subtext {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.entry {
+    margin-bottom: 15px;
+}
+
+.footer-grid { 
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; 
+  gap: 24px;
+  max-width: 900px;
+  width: 100%;
+  /* Removed 'top: 20' and 'left: 80' which were causing the gap */
+  /* Margin: 0 (top) auto (sides) 50px (bottom) */
+  margin: 0px auto 50px auto;
+  padding: 0;
+  height: 220px; /* FIXED height */
+}
+
+.blue-text {
+  color: #5b78f6; /* That specific blue shade */
+}
+.link-icon {
+  width: 32px;               /* ADJUST SIZE: LinkedIn logo size */
+  border-radius: 4px;
+}
+.icons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  height: 20px;
+}
+.linkedin-btn {
+    /* 1. Control the background (the black square) */
+    background-color: #000000; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* 2. Control the shape and size */
+    width: 45px;           /* Adjust this to change total size */
+    height: 45px;          /* Keep width/height the same for a square */
+    border-radius: 10px;   /* Creates the rounded "squircle" look */
+    
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.linkedin-btn i {
+    /* 3. Control the icon color (the white 'in') */
+    color: #ffffff; 
+    font-size: 1.5rem;     /* Adjust this to make 'in' bigger/smaller inside the square */
+}
+
+/* Hover effect */
+.linkedin-btn:hover {
+    transform: scale(1.05);
+    background-color: #1a1a1a; /* Subtle change on hover */
+}
+
+.linkedin-btn i:hover {
+    transform: scale(1.1); /* Makes it slightly bigger when you hover */
+}
+
+.signature-box img {
+    width: 100%;       /* Fills the width of the card */
+    max-width: 150px;  /* Prevents it from getting TOO big on large screens */
+    height: auto;      /* Keeps the signature from looking squashed */
+    display: block;
+    margin: 0 auto;    /* Centers it horizontally */
+}
+.contact-card {
+    background-color: #1a1a1a;
+    width: 820px;
+    border-radius: 30px; /* High rounding to match your images */
+    padding: 24px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease;
+    height: 600;
+}
+
+/* ensure the h3 link color doesn't change on hover or visit */
+.card-footer h3 a {
+    color: #aaa; /* or whatever white/light color you are using for your headings */
+}
+
+/* Optional: Subtle effect when you mouse over the entire footer area */
+.card-footer a:hover {
+    color: #aaa; /* slightly dims the text on hover to indicate it is clickable */
+    transition: color 0.2s ease;
+}
+.123{text-decoration: none; /* removes the underline */
+    color: inherit;       /* forces the link to use the parent's text color */
+    outline: none; }
+/* This targets the link in all its states */
+.a123, 
+.a123:visited,  
+.a123:active {
+    text-decoration: none; /* Removes underline */
+    color: white;          /* Forces it to be white (or use #ffffff) */
+    outline: none;
+    display: block;        /* Makes the whole row clickable */
+}
+
+/* If you want the "CONTACT" text inside to specifically stay white */
+.a123 h3 {
+    color: white;
+    margin: 0;
+}
